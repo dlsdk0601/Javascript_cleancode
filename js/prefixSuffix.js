@@ -17,9 +17,9 @@ genRandomNumber(1, 50);
 
 // 만약 규칙적이지 않은 매개변수를 사용한다면, arguments 객체나 rest Parameter 를 사용하자.
 // 이미 함수가 만들어져있다면, 랩핑하는 함수를 만드는 것도 좋다.
-function someFunc(someArg, someArg2, 4, 5, 6......) {}
+// function someFunc(someArg, someArg2, 4, 5, 6......) {}
 
 // 이런게 랩핑 함수가 된다.
-function getFunc(1, 2){
-  someFunc(1, 2)
-}
+// function getFunc(1, 2){
+//   someFunc(1, 2)
+// }

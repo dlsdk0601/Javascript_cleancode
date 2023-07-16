@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main></main>
+</body>
+<script>
+    document.querySelector("main").innerHTML = `<h1>Hello World</h1>`
+    // innerHTML 이 XSS 공격에 굉장히 취약하다.
+
+
+    /*
+    * react 에서는 innerHTML 이 태그 속성중에 dangerouslySetInnerHTML 이라는 속성으로 대체된다.
+    * 이름에서 부터 알 수 있듯이 굉장히 위험하다.
+    *
+    * 대체제가 몇가지 존재한다.
+    * setHTML => 아직 실험 단계이고 사파리, 파이어폭스에서 지원하지 않는다. 현재는 production 단계에서는 무리
+    * insertAdjacentHTML => production 단계에서 사용해도 괜찮다
+    * */
+
+    document.querySelector("main").insertAdjacentHTML("beforebegin", "<h1>Hello World</h1>")
+
+      // innerHTML=> 요소의 자손 HTML 직렬화를 포함하는 DOMString 입니다. 요소의 모든 자손이 제거되고, 문자열 htmlString 에 지정된 HTML을 파싱하고, 생성된 노드로 대체
+    // insertAdjacentHTML => 파싱이라는 과정이 없다.
+
+    // 비슷하게 innerText 도 textContent 로 대체 가능하다.
+</script>
+</html>

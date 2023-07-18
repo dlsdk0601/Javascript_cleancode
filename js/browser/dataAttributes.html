@@ -1,0 +1,26 @@
+<!-- Data Attributes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <main
+    data-columns="3"
+    data-index-number="1234"
+    data-parent-world="cars"
+  >main</main>
+</body>
+<script>
+  const main = document.querySelector("main");
+  console.log(main.dataset.columns); // "3"
+  console.log(main.dataset.indexNumber); // "1234"
+  // => dataset 으로 바로 접근이 가능하다.
+  // 케밥 케이스를 카멜로 바꿔야한다.
+
+  delete main.dataset.parentWorld
+  // 해당하는 속성이 지워진다.
+</script>
+</html>
